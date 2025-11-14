@@ -2,7 +2,5 @@
 <resources>
     <color name="launcher_icon_background">#1451A3</color>
 
-    <!-- Customize your light colors. -->
-    <color name="black">#000000</color>
-    <color name="white">#FFFFFF</color>
+    <!-- Customize your night colors. -->
 </resources>
