@@ -1,0 +1,57 @@
+complexity:
+  LongParameterList:
+    active: false
+  TooManyFunctions:
+    ignoreOverridden: true
+    ignorePrivate: true
+
+exceptions:
+  TooGenericExceptionCaught:
+    active: true
+    exceptionNames:
+      - 'Error'
+      - 'RuntimeException'
+      - 'Throwable'
+    allowedExceptionNameRegex: '_|(ignore|expected).*'
+
+naming:
+  FunctionNaming:
+    functionPattern: '([A-Za-z][a-zA-Z0-9]*)|(`.*)'
+
+formatting:
+  CommentSpacing:
+    active: false
+  ArgumentListWrapping:
+    active: false
+  NoEmptyFirstLineInMethodBlock:
+    active: false
+  Filename:
+    active: false
+  SpacingBetweenDeclarationsWithAnnotations:
+    active: false
+  FinalNewLine:
+    active: false
+
+style:
+  ForbiddenComment:
+    active: true
+    comments:
+      - 'FIXME:'
+      - 'STOPSHIP:'
+    allowedPatterns: 'TODO:'
+  MagicNumber:
+    ignorePropertyDeclaration: true
+    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreAnnotated:
+      - MultiUiPreview
+      - MultiPreview
+      - Preview
+      - PreviewLightDark
+      - MultiPreview500
+  UnusedPrivateMember:
+    ignoreAnnotated:
+      - MultiUiPreview
+      - MultiPreview
+      - Preview
+      - PreviewLightDark
+      - MultiPreview500
