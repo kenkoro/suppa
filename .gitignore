@@ -4,6 +4,7 @@
 .vscode
 .settings
 .DS_Store
+.kotlin
 build
 captures
 .externalNativeBuild

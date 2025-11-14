@@ -1,20 +1,15 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.dev.kenkoro.android.app)
     alias(libs.plugins.google.devtools.ksp)
     alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 android {
-    namespace = "dev.kenkoro.app"
-    compileSdk {
-        version = release(36)
-    }
+    buildFeatures.viewBinding = true
 
+    namespace = "dev.kenkoro.app"
     defaultConfig {
         applicationId = "dev.kenkoro.app"
-        minSdk = 24
-        targetSdk = 36
         versionCode = (project.property("VERSION_CODE") as String).toInt()
         versionName = project.property("VERSION_NAME") as String
 
@@ -29,13 +24,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
     }
 }
 

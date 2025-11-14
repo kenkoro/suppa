@@ -19,4 +19,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "friendly-umbrella"
 
+includeBuild("build-logic")
+
 include(":app")
