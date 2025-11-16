@@ -15,6 +15,10 @@ serialization = "1.9.0"
 retrofit = "3.0.0"
 recyclerview = "1.4.0"
 splashscreen = "1.2.0"
+detekt = "1.23.8"
+coroutines = "1.10.2"
+napier = "2.7.1"
+mokoResources = "0.25.1"
 
 [libraries]
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -34,21 +38,36 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 jsonConverter = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
 
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
+
+napier = { group = "io.github.aakira", name = "napier", version.ref = "napier" }
+
+moko-resources = { group = "dev.icerock.moko", name = "resources", version.ref = "mokoResources" }
 
 # Gradle plugins artifacts
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+detektGradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+moko-resourcesGradlePlugin = { group = "dev.icerock.moko", name = "resources-generator", version.ref = "mokoResources" }
+multiplatformGradlePlugin = { group = "org.jetbrains.kotlin.multiplatform", name = "org.jetbrains.kotlin.multiplatform.gradle.plugin", version.ref = "kotlin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+gitlab-arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+icerock-mobile-multiplatformResources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "mokoResources" }
+jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 
 # Convention plugins
-dev-kenkoro-android-app = { id = "android-app-convention" }
+dev-kenkoro-android-app = { id = "app-convention" }
+dev-kenkoro-lib = { id = "lib-convention" }
+dev-kenkoro-multiplatform-lib = { id = "multiplatform-lib-convention" }
 
 [bundles]
 androidx = [

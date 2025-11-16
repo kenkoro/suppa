@@ -22,3 +22,4 @@ rootProject.name = "friendly-umbrella"
 includeBuild("build-logic")
 
 include(":app")
+include(":i18n")
