@@ -23,3 +23,4 @@ includeBuild("build-logic")
 
 include(":app")
 include(":i18n")
+include(":lib")

@@ -1,7 +1,5 @@
 plugins {
     alias(libs.plugins.dev.kenkoro.android.app)
-    alias(libs.plugins.google.devtools.ksp)
-    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 android {
@@ -30,7 +28,7 @@ android {
 dependencies {
     implementation(libs.material)
     implementation(libs.bundles.androidx)
-    implementation(libs.bundles.network)
+    implementation(projects.lib)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

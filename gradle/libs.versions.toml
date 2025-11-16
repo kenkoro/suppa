@@ -19,6 +19,7 @@ detekt = "1.23.8"
 coroutines = "1.10.2"
 napier = "2.7.1"
 mokoResources = "0.25.1"
+dagger = "2.57.2"
 
 [libraries]
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -47,6 +48,9 @@ detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-form
 napier = { group = "io.github.aakira", name = "napier", version.ref = "napier" }
 
 moko-resources = { group = "dev.icerock.moko", name = "resources", version.ref = "mokoResources" }
+
+dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
 
 # Gradle plugins artifacts
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }

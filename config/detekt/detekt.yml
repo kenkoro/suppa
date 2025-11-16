@@ -29,7 +29,7 @@ formatting:
     active: false
   SpacingBetweenDeclarationsWithAnnotations:
     active: false
-  FinalNewLine:
+  FinalNewline:
     active: false
 
 style:
@@ -55,3 +55,5 @@ style:
       - Preview
       - PreviewLightDark
       - MultiPreview500
+  NewLineAtEndOfFile:
+    active: false
