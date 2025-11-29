@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="launcher_icon_background">#1451A3</color>
+    <color name="launcher_icon_background">#E7E3DB</color>
 
     <!-- Customize your light colors. -->
     <color name="black">#000000</color>

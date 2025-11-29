@@ -2,12 +2,17 @@ package dev.kenkoro.app
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import dev.kenkoro.lib.di.DaggerAppComponent
+import androidx.lifecycle.ViewModelProvider
+import dev.kenkoro.app.di.DaggerActivity
+import dev.kenkoro.lib.feature.sample.SampleViewModel
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+internal class MainActivity : DaggerActivity() {
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -18,9 +23,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // TODO: Product flavors, view-models DI
-        DaggerAppComponent.builder()
-            .baseUrl("")
-            .build()
+        val viewModel = ViewModelProvider(this, viewModelFactory)[SampleViewModel::class]
+        viewModel.hello()
     }
 }

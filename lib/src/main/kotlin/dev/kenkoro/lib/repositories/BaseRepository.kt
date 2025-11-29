@@ -1,5 +1,5 @@
 package dev.kenkoro.lib.repositories
 
-interface BaseRepository {
-    fun logout()
-}
+import dev.kenkoro.lib.feature.sample.model.SampleRepository
+
+internal interface BaseRepository : SampleRepository

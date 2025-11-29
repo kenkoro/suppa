@@ -17,10 +17,12 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "friendly-umbrella"
+rootProject.name = "suppa"
 
 includeBuild("build-logic")
 
 include(":app")
 include(":i18n")
 include(":lib")
+include(":lib:utils")
+include(":lib:feature:sample")

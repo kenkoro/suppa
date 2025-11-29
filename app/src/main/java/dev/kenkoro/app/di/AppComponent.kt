@@ -1,20 +1,21 @@
-package dev.kenkoro.lib.di
+package dev.kenkoro.app.di
 
 import dagger.BindsInstance
 import dagger.Component
-import dev.kenkoro.lib.di.modules.ApiModule
-import dev.kenkoro.lib.di.modules.RepositoryModule
+import dagger.android.AndroidInjectionModule
+import dev.kenkoro.lib.di.modules.LibModule
 import dev.kenkoro.lib.di.qualifiers.BaseUrl
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules = [
-        ApiModule::class,
-        RepositoryModule::class,
+        ActivityModule::class,
+        AndroidInjectionModule::class,
+        LibModule::class,
     ]
 )
-interface AppComponent {
+internal interface AppComponent {
     @Component.Builder
     interface Builder {
         @BindsInstance
@@ -22,4 +23,6 @@ interface AppComponent {
 
         fun build(): AppComponent
     }
+
+    fun inject(application: DaggerApp)
 }

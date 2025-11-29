@@ -30,6 +30,9 @@ dependencies {
     implementation(libs.bundles.androidx)
     implementation(projects.lib)
 
+    ksp(libs.dagger.compiler)
+    ksp(libs.dagger.android.processor)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

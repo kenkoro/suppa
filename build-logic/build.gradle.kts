@@ -14,4 +14,5 @@ dependencies {
     api(libs.detektGradlePlugin)
     api(libs.moko.resourcesGradlePlugin)
     api(libs.multiplatformGradlePlugin)
+    api(libs.kspGradlePlugin)
 }
