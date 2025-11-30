@@ -6,7 +6,7 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
-internal abstract class DaggerApp : Application(), HasAndroidInjector {
+internal open class DaggerApp : Application(), HasAndroidInjector {
     @Inject
     lateinit var androidInjector: DispatchingAndroidInjector<Any>
 

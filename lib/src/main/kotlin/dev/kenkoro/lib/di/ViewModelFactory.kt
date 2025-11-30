@@ -19,12 +19,14 @@ internal class ViewModelFactory @Inject constructor(
                 }
             }
         }
-        if (provider == null) throw IllegalArgumentException("Unknown view-model class $modelClass")
+        requireNotNull(provider) { "Unknown view-model class $modelClass" }
+
         try {
             @Suppress("UNCHECKED_CAST")
             return provider.get() as T
         } catch (e: Exception) {
-            throw RuntimeException(e.cause)
+            @Suppress("TooGenericExceptionThrown")
+            throw RuntimeException(e)
         }
     }
 }
