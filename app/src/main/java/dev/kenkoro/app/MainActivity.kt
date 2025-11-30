@@ -4,14 +4,11 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ViewModelProvider
 import dev.kenkoro.app.di.DaggerActivity
 import dev.kenkoro.lib.feature.sample.SampleViewModel
-import javax.inject.Inject
 
 internal class MainActivity : DaggerActivity() {
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val viewModel: SampleViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +20,6 @@ internal class MainActivity : DaggerActivity() {
             insets
         }
 
-        val viewModel = ViewModelProvider(this, viewModelFactory)[SampleViewModel::class]
         viewModel.hello()
     }
 }

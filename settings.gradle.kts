@@ -23,6 +23,8 @@ includeBuild("build-logic")
 
 include(":app")
 include(":i18n")
+include(":utils")
+include(":uikit")
 include(":lib")
 include(":lib:utils")
 include(":lib:feature:sample")
