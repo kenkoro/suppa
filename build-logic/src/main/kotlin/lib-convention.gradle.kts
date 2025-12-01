@@ -10,4 +10,5 @@ dependencies {
     implementation(libs.safeLibrary("kotlinx-coroutines-core"))
     implementation(libs.safeLibrary("napier"))
     implementation(libs.safeLibrary("androidx-viewmodel-ktx"))
+    implementation(libs.safeLibrary("androidx-activity"))
 }

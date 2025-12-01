@@ -4,11 +4,14 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import dev.kenkoro.app.di.DaggerActivity
+import dev.kenkoro.app.di.ParamsActivity
 import dev.kenkoro.lib.feature.sample.SampleViewModel
+import dev.kenkoro.lib.feature.sample.di.SampleViewModelFactory
 
-internal class MainActivity : DaggerActivity() {
-    private val viewModel: SampleViewModel by viewModels()
+internal class MainActivity : ParamsActivity<SampleViewModelFactory>() {
+    private val viewModel: SampleViewModel by getViewModel {
+        SampleViewModel.Params(name = "sample")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

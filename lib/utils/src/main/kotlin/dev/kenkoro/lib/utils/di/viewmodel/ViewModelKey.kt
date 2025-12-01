@@ -1,4 +1,4 @@
-package dev.kenkoro.lib.utils.di
+package dev.kenkoro.lib.utils.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
