@@ -1,3 +1,5 @@
+import gradle.kotlin.dsl.accessors._fc5b2483150a8e479436b5eebbbfbb03.implementation
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -84,4 +86,8 @@ android {
         resources.excludes += "META-INF/AL2.0"
         resources.excludes += "META-INF/LGPL2.1"
     }
+}
+
+dependencies {
+    implementation(libs.safeLibrary("napier"))
 }

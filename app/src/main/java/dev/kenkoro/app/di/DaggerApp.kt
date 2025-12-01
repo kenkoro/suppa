@@ -4,6 +4,7 @@ import android.app.Application
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
+import dev.kenkoro.app.BuildConfig
 import javax.inject.Inject
 
 internal open class DaggerApp : Application(), HasAndroidInjector {
@@ -15,7 +16,7 @@ internal open class DaggerApp : Application(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
         DaggerAppComponent.builder()
-            .baseUrl("")
+            .baseUrl(BuildConfig.BASE_URL)
             .build()
             .inject(this)
     }
