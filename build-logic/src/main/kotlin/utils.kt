@@ -5,6 +5,7 @@ import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.provider.Provider
 import org.gradle.kotlin.dsl.getByType
+import java.util.Properties
 
 internal val Project.libs: VersionCatalog
     get() = this.extensions.getByType<VersionCatalogsExtension>().named("libs")

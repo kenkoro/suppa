@@ -7,7 +7,7 @@ import io.github.aakira.napier.Napier
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class SampleViewModel @Inject constructor(
+class SampleViewModel @Inject internal constructor(
     private val repository: SampleRepository,
 ) : ViewModel() {
     fun onStart() {

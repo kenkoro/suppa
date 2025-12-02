@@ -17,6 +17,8 @@ internal open class DaggerApp : Application(), HasAndroidInjector {
         super.onCreate()
         DaggerAppComponent.builder()
             .baseUrl(BuildConfig.BASE_URL)
+            .supabaseUrl(BuildConfig.SUPABASE_URL)
+            .supabaseKey(BuildConfig.SUPABASE_KEY)
             .build()
             .inject(this)
     }

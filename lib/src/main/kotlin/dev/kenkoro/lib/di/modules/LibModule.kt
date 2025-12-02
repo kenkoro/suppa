@@ -7,6 +7,7 @@ import dagger.Module
         FeatureModule::class,
         ApiModule::class,
         RepositoryModule::class,
+        SupabaseModule::class,
     ]
 )
 interface LibModule

@@ -5,6 +5,8 @@ import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dev.kenkoro.lib.di.modules.LibModule
 import dev.kenkoro.lib.di.qualifiers.BaseUrl
+import dev.kenkoro.lib.di.qualifiers.SupabaseKey
+import dev.kenkoro.lib.di.qualifiers.SupabaseUrl
 import javax.inject.Singleton
 
 @Singleton
@@ -20,6 +22,12 @@ internal interface AppComponent {
     interface Builder {
         @BindsInstance
         fun baseUrl(@BaseUrl baseUrl: String): Builder
+
+        @BindsInstance
+        fun supabaseUrl(@SupabaseUrl supabaseUrl: String): Builder
+
+        @BindsInstance
+        fun supabaseKey(@SupabaseKey supabaseKey: String): Builder
 
         fun build(): AppComponent
     }

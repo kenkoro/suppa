@@ -1,4 +1,5 @@
 import gradle.kotlin.dsl.accessors._fc5b2483150a8e479436b5eebbbfbb03.implementation
+import java.util.Properties
 
 plugins {
     id("com.android.application")
@@ -53,26 +54,44 @@ android {
     }
 
     productFlavors {
+        val props = Properties()
+        val propsFile = rootProject.file("local.properties")
+        if (propsFile.exists()) {
+            propsFile.inputStream().use { props.load(it) }
+        }
+
         create("dev") {
             dimension = "server"
             applicationIdSuffix = ".dev"
 
             val baseUrl = "https://dev.localhost/"
+            val supabaseUrl = props.getProperty("supabase.url.dev")
+            val supabaseKey = props.getProperty("supabase.key.dev")
             buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
+            supabaseUrl?.let { buildConfigField("String", "SUPABASE_URL", "\"$it\"") }
+            supabaseKey?.let { buildConfigField("String", "SUPABASE_KEY", "\"$it\"") }
         }
         create("stage") {
             dimension = "server"
             applicationIdSuffix = ".stage"
 
             val baseUrl = "https://stage.localhost/"
+            val supabaseUrl = props.getProperty("supabase.url.stage")
+            val supabaseKey = props.getProperty("supabase.key.stage")
             buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
+            supabaseUrl?.let { buildConfigField("String", "SUPABASE_URL", "\"$it\"") }
+            supabaseKey?.let { buildConfigField("String", "SUPABASE_KEY", "\"$it\"") }
         }
         create("prod") {
             dimension = "server"
             applicationIdSuffix = ".prod"
 
             val baseUrl = "https://prod.localhost/"
+            val supabaseUrl = props.getProperty("supabase.url.prod")
+            val supabaseKey = props.getProperty("supabase.key.prod")
             buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
+            supabaseUrl?.let { buildConfigField("String", "SUPABASE_URL", "\"$it\"") }
+            supabaseKey?.let { buildConfigField("String", "SUPABASE_KEY", "\"$it\"") }
         }
     }
 

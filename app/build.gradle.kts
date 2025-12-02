@@ -18,6 +18,7 @@ android {
 dependencies {
     implementation(libs.material)
     implementation(libs.bundles.androidx)
+
     implementation(projects.lib)
     implementation(projects.utils)
     implementation(projects.uikit)

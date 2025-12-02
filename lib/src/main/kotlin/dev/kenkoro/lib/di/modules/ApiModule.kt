@@ -8,11 +8,9 @@ import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
-import javax.inject.Singleton
 
 @Module
-internal class ApiModule {
-    @Singleton
+internal object ApiModule {
     @Provides
     fun provideJson(): Json {
         return Json {
@@ -20,11 +18,9 @@ internal class ApiModule {
         }
     }
 
-    @Singleton
     @Provides
     fun provideMediaType(): MediaType = "application/json".toMediaType()
 
-    @Singleton
     @Provides
     fun provideRetrofit(
         @BaseUrl baseUrl: String,

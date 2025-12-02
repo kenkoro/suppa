@@ -21,6 +21,7 @@ napier = "2.7.1"
 mokoResources = "0.25.1"
 dagger = "2.57.2"
 viewmodelKtx = "2.10.0"
+supabase = "3.2.6"
 
 [libraries]
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -56,6 +57,9 @@ dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", versi
 dagger-android = { group = "com.google.dagger", name = "dagger-android", version.ref = "dagger" }
 dagger-android-support = { group = "com.google.dagger", name = "dagger-android-support", version.ref = "dagger" }
 dagger-android-processor = { group = "com.google.dagger", name = "dagger-android-processor", version.ref = "dagger" }
+
+supabase-bom = { group = "io.github.jan-tennert.supabase", name = "bom", version.ref = "supabase" }
+supabase-postgrest = { group = "io.github.jan-tennert.supabase", name = "postgrest-kt" }
 
 # Gradle plugins artifacts
 kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }

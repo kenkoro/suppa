@@ -15,6 +15,8 @@ dependencies {
 
     api(projects.i18n)
     api(libs.bundles.network)
+    api(platform(libs.supabase.bom))
+    api(libs.supabase.postgrest)
 
     implementation(libs.dagger)
     api(libs.dagger.android)
