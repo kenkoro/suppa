@@ -6,4 +6,6 @@ plugins {
     alias(libs.plugins.gitlab.arturbosch.detekt).apply(false)
     alias(libs.plugins.icerock.mobile.multiplatformResources).apply(false)
     alias(libs.plugins.jetbrains.kotlin.multiplatform).apply(false)
+    alias(libs.plugins.firebase.crashlytics).apply(false)
+    alias(libs.plugins.google.services).apply(false)
 }

@@ -12,8 +12,8 @@ val projectModules = listOf(
 
 dependencies {
     projectModules.forEach(::api)
-
     api(projects.i18n)
+
     api(libs.bundles.network)
     api(platform(libs.supabase.bom))
     api(libs.supabase.postgrest)

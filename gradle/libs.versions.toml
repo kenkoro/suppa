@@ -1,27 +1,39 @@
 [versions]
-agp = "8.13.1"
-kotlin = "2.2.21"
+material = "1.13.0"
+
 coreKtx = "1.17.0"
-junit = "4.13.2"
-androidjunit = "1.3.0"
 espressoCore = "3.7.0"
 appcompat = "1.7.1"
-material = "1.13.0"
 activity = "1.12.0"
 constraintlayout = "2.2.1"
 navigation = "2.9.6"
-ksp = "2.2.21-2.0.4"
-serialization = "1.9.0"
-retrofit = "3.0.0"
 recyclerview = "1.4.0"
 splashscreen = "1.2.0"
-detekt = "1.23.8"
-coroutines = "1.10.2"
-napier = "2.7.1"
-mokoResources = "0.25.1"
-dagger = "2.57.2"
 viewmodelKtx = "2.10.0"
+
+retrofit = "3.0.0"
+
+coroutines = "1.10.2"
+serialization = "1.9.0"
+
+junit = "4.13.2"
+androidjunit = "1.3.0"
+
+detekt = "1.23.8"
+napier = "2.7.1"
+
+mokoResources = "0.25.1"
+mokoCrashReporting = "0.4.0"
+
+dagger = "2.57.2"
 supabase = "3.2.6"
+firebaseBoM = "34.6.0"
+firebase = "3.0.6"
+googleServices = "4.4.4"
+
+agp = "8.13.1"
+kotlin = "2.2.21"
+ksp = "2.2.21-2.0.4"
 
 [libraries]
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -51,6 +63,9 @@ detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-form
 napier = { group = "io.github.aakira", name = "napier", version.ref = "napier" }
 
 moko-resources = { group = "dev.icerock.moko", name = "resources", version.ref = "mokoResources" }
+moko-crashReporting-core = { group = "dev.icerock.moko", name = "crash-reporting-core", version.ref = "mokoCrashReporting" }
+moko-crashReporting-crashlytics = { group = "dev.icerock.moko", name = "crash-reporting-crashlytics", version.ref = "mokoCrashReporting" }
+moko-crashReporting-napier = { group = "dev.icerock.moko", name = "crash-reporting-napier", version.ref = "mokoCrashReporting" }
 
 dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
 dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
@@ -60,6 +75,9 @@ dagger-android-processor = { group = "com.google.dagger", name = "dagger-android
 
 supabase-bom = { group = "io.github.jan-tennert.supabase", name = "bom", version.ref = "supabase" }
 supabase-postgrest = { group = "io.github.jan-tennert.supabase", name = "postgrest-kt" }
+
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBoM" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 
 # Gradle plugins artifacts
 kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -77,6 +95,8 @@ jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serializati
 gitlab-arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 icerock-mobile-multiplatformResources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "mokoResources" }
 jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase" }
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 
 # Convention plugins
 dev-kenkoro-android-app = { id = "app-convention" }
@@ -99,4 +119,9 @@ network = [
     "retrofit",
     "jsonConverter",
     "kotlinx-serialization-json"
+]
+moko-crashReporting = [
+    "moko-crashReporting-core",
+    "moko-crashReporting-crashlytics",
+    "moko-crashReporting-napier"
 ]

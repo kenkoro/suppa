@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.dev.kenkoro.android.app)
+    alias(libs.plugins.firebase.crashlytics)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -18,6 +20,9 @@ android {
 dependencies {
     implementation(libs.material)
     implementation(libs.bundles.androidx)
+    implementation(libs.bundles.moko.crashReporting)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics)
 
     implementation(projects.lib)
     implementation(projects.utils)
