@@ -8,6 +8,7 @@ import dagger.Module
         ApiModule::class,
         RepositoryModule::class,
         SupabaseModule::class,
+        ExceptionHandlerModule::class,
     ]
 )
 interface LibModule

@@ -25,6 +25,8 @@ napier = "2.7.1"
 
 mokoResources = "0.25.1"
 mokoCrashReporting = "0.4.0"
+mokoErrors = "0.8.0"
+mokoNetwork = "0.21.2"
 
 dagger = "2.57.2"
 supabase = "3.2.6"
@@ -68,6 +70,8 @@ moko-resources = { group = "dev.icerock.moko", name = "resources", version.ref =
 moko-crashReporting-core = { group = "dev.icerock.moko", name = "crash-reporting-core", version.ref = "mokoCrashReporting" }
 moko-crashReporting-crashlytics = { group = "dev.icerock.moko", name = "crash-reporting-crashlytics", version.ref = "mokoCrashReporting" }
 moko-crashReporting-napier = { group = "dev.icerock.moko", name = "crash-reporting-napier", version.ref = "mokoCrashReporting" }
+moko-errors = { group = "dev.icerock.moko", name = "errors", version.ref = "mokoErrors" }
+moko-network-errors = { group = "dev.icerock.moko", name = "network-errors", version.ref = "mokoNetwork" }
 
 dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
 dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }

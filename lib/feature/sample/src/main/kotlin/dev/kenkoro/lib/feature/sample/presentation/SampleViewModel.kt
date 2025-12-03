@@ -2,6 +2,7 @@ package dev.kenkoro.lib.feature.sample.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dev.icerock.moko.errors.handler.ExceptionHandler
 import dev.kenkoro.lib.feature.sample.model.SampleRepository
 import dev.kenkoro.lib.utils.di.viewmodel.sendAction
 import kotlinx.coroutines.channels.Channel
@@ -12,6 +13,7 @@ import javax.inject.Inject
 
 class SampleViewModel @Inject internal constructor(
     private val repository: SampleRepository,
+    val exceptionHandler: ExceptionHandler,
 ) : ViewModel() {
     private val _actions = Channel<Actions>()
     val actions: Flow<Actions> = _actions.receiveAsFlow()

@@ -21,10 +21,15 @@ internal class SampleFragment : NoParamsFragment<SampleFragmentBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupExceptionHandler()
         setupListeners()
         setupCollectors()
 
         viewModel.onStart()
+    }
+
+    private fun setupExceptionHandler() {
+        viewModel.exceptionHandler.bind(viewLifecycleOwner, requireActivity())
     }
 
     private fun setupListeners() {

@@ -23,4 +23,7 @@ dependencies {
     api(libs.dagger.android.support)
     ksp(libs.dagger.compiler)
     ksp(libs.dagger.android.processor)
+
+    api(libs.moko.errors)
+    implementation(libs.moko.network.errors)
 }

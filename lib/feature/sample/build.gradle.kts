@@ -4,4 +4,6 @@ plugins {
 
 dependencies {
     implementation(projects.lib.utils)
+
+    implementation(libs.moko.errors)
 }
