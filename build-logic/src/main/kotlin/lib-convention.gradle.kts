@@ -11,4 +11,6 @@ dependencies {
     implementation(libs.safeLibrary("napier"))
     implementation(libs.safeLibrary("androidx-viewmodel-ktx"))
     implementation(libs.safeLibrary("androidx-activity"))
+    implementation(libs.safeLibrary("androidx-appcompat"))
+    implementation(libs.safeLibrary("androidx-fragment-ktx"))
 }

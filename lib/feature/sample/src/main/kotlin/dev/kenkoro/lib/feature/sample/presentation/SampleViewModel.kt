@@ -3,17 +3,30 @@ package dev.kenkoro.lib.feature.sample.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.kenkoro.lib.feature.sample.model.SampleRepository
-import io.github.aakira.napier.Napier
+import dev.kenkoro.lib.utils.di.viewmodel.sendAction
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class SampleViewModel @Inject internal constructor(
     private val repository: SampleRepository,
 ) : ViewModel() {
+    private val _actions = Channel<Actions>()
+    val actions: Flow<Actions> = _actions.receiveAsFlow()
+
     fun onStart() {
         viewModelScope.launch {
             repository.get()
-            Napier.d { "Everything's working" }
         }
+    }
+
+    fun onCentralTitleClicked() {
+        sendAction(_actions, Actions.RouteToAssistedSample)
+    }
+
+    sealed interface Actions {
+        data object RouteToAssistedSample : Actions
     }
 }

@@ -20,7 +20,7 @@ dependencies {
 
     implementation(libs.dagger)
     api(libs.dagger.android)
-    implementation(libs.dagger.android.support)
+    api(libs.dagger.android.support)
     ksp(libs.dagger.compiler)
     ksp(libs.dagger.android.processor)
 }

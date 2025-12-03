@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="sample">Hello, Suppa!</string>
+    <string name="central_sample_title">Hello, sample fragment! Tap here</string>
+    <string name="central_assisted_sample_title">Hello, assisted sample fragment!</string>
 </resources>
