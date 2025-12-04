@@ -1,4 +1,3 @@
-import gradle.kotlin.dsl.accessors._fc5b2483150a8e479436b5eebbbfbb03.implementation
 import java.util.Properties
 
 plugins {

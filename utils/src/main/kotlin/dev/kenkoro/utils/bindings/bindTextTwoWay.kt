@@ -1,10 +1,9 @@
-package dev.kenkoro.utils.binding
+package dev.kenkoro.utils.bindings
 
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import androidx.lifecycle.LifecycleOwner
-import dev.kenkoro.utils.flow.binding.bind
 import kotlinx.coroutines.DisposableHandle
 import kotlinx.coroutines.flow.MutableStateFlow
 

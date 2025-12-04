@@ -9,7 +9,7 @@ import dev.kenkoro.app.databinding.SampleFragmentBinding
 import dev.kenkoro.app.di.NoParamsFragment
 import dev.kenkoro.app.utils.Destination
 import dev.kenkoro.lib.feature.sample.presentation.SampleViewModel
-import dev.kenkoro.utils.flow.binding.bind
+import dev.kenkoro.utils.bindings.bind
 
 internal class SampleFragment : NoParamsFragment<SampleFragmentBinding>() {
     private val viewModel by getViewModel<SampleViewModel>()

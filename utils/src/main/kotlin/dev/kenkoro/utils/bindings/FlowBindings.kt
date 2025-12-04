@@ -1,4 +1,4 @@
-package dev.kenkoro.utils.flow.binding
+package dev.kenkoro.utils.bindings
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner

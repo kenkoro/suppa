@@ -8,4 +8,6 @@ android.namespace = "dev.kenkoro.lib.utils"
 dependencies {
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
+
+    implementation(libs.moko.resources)
 }

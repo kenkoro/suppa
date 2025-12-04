@@ -46,7 +46,6 @@ internal class MainActivity : NoParamsActivity() {
             AppBarConfiguration(
                 setOf(
                     R.id.sampleFragment,
-                    R.id.assistedSampleFragment,
                 ),
             )
         setupActionBarWithNavController(navController, appBarConfiguration)

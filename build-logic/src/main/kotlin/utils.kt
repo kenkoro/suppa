@@ -5,12 +5,13 @@ import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.provider.Provider
 import org.gradle.kotlin.dsl.getByType
-import java.util.Properties
 
 internal val Project.libs: VersionCatalog
     get() = this.extensions.getByType<VersionCatalogsExtension>().named("libs")
 
-/** Get a library from the `libs.versions.toml` by specifying its alias. */
+/**
+ * Get a library from the `libs.versions.toml` by specifying its alias.
+ */
 internal fun VersionCatalog.safeLibrary(alias: String): Provider<MinimalExternalModuleDependency> {
     try {
         return this.findLibrary(alias).get()
@@ -19,7 +20,9 @@ internal fun VersionCatalog.safeLibrary(alias: String): Provider<MinimalExternal
     }
 }
 
-/** Get a feature package name */
+/**
+ * Get a feature package name.
+ */
 internal fun Project.getFeatureNamespace(): String {
     val packageName: String = name.replace("-", ".")
     return "dev.kenkoro.lib.feature.$packageName"
