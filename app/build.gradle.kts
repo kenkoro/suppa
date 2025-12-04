@@ -23,6 +23,7 @@ dependencies {
     implementation(libs.bundles.moko.crashReporting)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics)
+    implementation(libs.moko.units.viewBinding)
 
     implementation(projects.lib)
     implementation(projects.utils)

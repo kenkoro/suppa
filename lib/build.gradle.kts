@@ -25,5 +25,6 @@ dependencies {
     ksp(libs.dagger.android.processor)
 
     api(libs.moko.errors)
+    api(libs.moko.units)
     implementation(libs.moko.network.errors)
 }

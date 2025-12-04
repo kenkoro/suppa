@@ -14,10 +14,8 @@ import dev.kenkoro.utils.flow.binding.bind
 internal class SampleFragment : NoParamsFragment<SampleFragmentBinding>() {
     private val viewModel by getViewModel<SampleViewModel>()
 
-    override fun viewBindingInflate(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): SampleFragmentBinding = SampleFragmentBinding.inflate(inflater, container, false)
+    override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> SampleFragmentBinding
+        get() = SampleFragmentBinding::inflate
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

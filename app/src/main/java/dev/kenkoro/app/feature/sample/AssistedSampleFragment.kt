@@ -15,12 +15,8 @@ internal class AssistedSampleFragment :
         AssistedSampleViewModel.Params(name = "passed info")
     }
 
-    override fun viewBindingInflate(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): AssistedSampleFragmentBinding {
-        return AssistedSampleFragmentBinding.inflate(inflater, container, false)
-    }
+    override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> AssistedSampleFragmentBinding
+        get() = AssistedSampleFragmentBinding::inflate
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

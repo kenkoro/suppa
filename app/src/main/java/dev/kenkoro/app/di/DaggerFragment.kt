@@ -14,10 +14,7 @@ internal abstract class DaggerFragment<VB : ViewBinding> : Fragment() {
     protected val binding: VB
         get() = requireNotNull(_binding) { "Couldn't read the binding on creation" }
 
-    protected abstract fun viewBindingInflate(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): VB
+    protected abstract val inflate: (LayoutInflater, ViewGroup?, Boolean) -> VB
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -29,7 +26,7 @@ internal abstract class DaggerFragment<VB : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = viewBindingInflate(inflater, container)
+        _binding = inflate(inflater, container, false)
         return binding.root
     }
 
