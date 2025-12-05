@@ -13,4 +13,7 @@ dependencies {
     implementation(libs.safeLibrary("androidx-activity"))
     implementation(libs.safeLibrary("androidx-appcompat"))
     implementation(libs.safeLibrary("androidx-fragment-ktx"))
+
+    testImplementation(libs.safeLibrary("kotlin-test"))
+    testImplementation(libs.safeLibrary("kotlinx-coroutines-test"))
 }
