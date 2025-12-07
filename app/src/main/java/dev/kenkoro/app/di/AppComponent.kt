@@ -1,9 +1,11 @@
 package dev.kenkoro.app.di
 
+import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dev.kenkoro.lib.di.modules.LibModule
+import dev.kenkoro.lib.di.qualifiers.AppContext
 import dev.kenkoro.lib.di.qualifiers.BaseUrl
 import dev.kenkoro.lib.di.qualifiers.SupabaseKey
 import dev.kenkoro.lib.di.qualifiers.SupabaseUrl
@@ -29,6 +31,9 @@ internal interface AppComponent {
 
         @BindsInstance
         fun supabaseKey(@SupabaseKey supabaseKey: String): Builder
+
+        @BindsInstance
+        fun appContext(@AppContext context: Context): Builder
 
         fun build(): AppComponent
     }

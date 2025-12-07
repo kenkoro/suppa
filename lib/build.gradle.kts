@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.dev.kenkoro.lib)
     alias(libs.plugins.jetbrains.kotlin.serialization)
+    alias(libs.plugins.sqldelight)
 }
 
 android.namespace = "dev.kenkoro.lib"
@@ -27,4 +28,14 @@ dependencies {
     api(libs.moko.errors)
     api(libs.moko.units)
     implementation(libs.moko.network.errors)
+    implementation(libs.sqldelight.androidDriver)
+    implementation(libs.sqldelight.coroutinesExtensions)
+}
+
+sqldelight {
+    databases {
+        create("SampleDatabase") {
+            packageName = "dev.kenkoro.lib.sample"
+        }
+    }
 }

@@ -9,6 +9,7 @@ import dagger.Module
         RepositoryModule::class,
         SupabaseModule::class,
         ExceptionHandlerModule::class,
+        SqlDelightModule::class,
     ]
 )
 interface LibModule

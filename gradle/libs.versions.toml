@@ -39,6 +39,8 @@ agp = "8.13.1"
 kotlin = "2.2.21"
 ksp = "2.2.21-2.0.4"
 
+sqldelight = "2.2.1"
+
 [libraries]
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
@@ -87,6 +89,10 @@ firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashly
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 
+sqldelight-runtime = { group = "app.cash.sqldelight", name = "runtime", version.ref = "sqldelight" }
+sqldelight-androidDriver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqldelight" }
+sqldelight-coroutinesExtensions = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight" }
+
 # Gradle plugins artifacts
 kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 androidGradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
@@ -105,6 +111,7 @@ icerock-mobile-multiplatformResources = { id = "dev.icerock.mobile.multiplatform
 jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
 
 # Convention plugins
 dev-kenkoro-android-app = { id = "app-convention" }

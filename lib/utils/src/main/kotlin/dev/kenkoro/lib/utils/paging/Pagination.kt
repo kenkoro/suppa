@@ -12,8 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 /**
- * The pagination implementation to work seamlessly with
- * the [moko-units](https://github.com/icerockdev/moko-units).
+ * The pagination implementation to use inside a business-logic module.
  *
  * Here, you pass a specific [PagingDataSource] to load data,
  * the [isSameItem] comparator, and two listeners. Optionally, you can pass a pre-defined
@@ -24,17 +23,18 @@ class Pagination<T>(
     private val isSameItem: ((T, T) -> Boolean) = { a, b -> a == b },
     private val nextPageListener: (Result<List<T>>) -> Unit = {},
     private val refreshListener: (Result<List<T>>) -> Unit = {},
-    initValue: List<T>? = null
+    initValue: List<T>? = null,
 ) {
     private val _state = MutableStateFlow<RemoteStateData<PagingState<T>>>(
         initValue
             ?.let { RemoteState.Success(PagingState(items = it)) }
-            ?: RemoteState.Loading
+            ?: RemoteState.Loading,
     )
 
     /**
      * The collectable pagination state.
      *
+     * Sample usage inside a [androidx.lifecycle.ViewModel]:
      * ```kotlin
      * val state = pagination.state
      *     .map { state ->
@@ -73,35 +73,28 @@ class Pagination<T>(
      * the operation to finish.
      */
     suspend fun loadFirstPage() {
-        loadFirstPageJob?.let {
-            it.join()
+        loadFirstPageJob?.let { job ->
+            job.join()
             return
         }
-
-        refreshJob?.let {
-            it.cancel()
-            refreshJob = null
-        }
-        loadNextPageJob?.let {
-            it.cancel()
-            loadNextPageJob = null
-        }
+        cancelRefreshJob()
+        cancelLoadNextPageJob()
 
         coroutineScope {
             loadFirstPageJob = launch {
                 _state.value = RemoteState.Loading
 
                 try {
-                    val items: List<T> = dataSource.loadPage(null)
+                    val items: List<T> = dataSource.loadPage(list = null)
                     _state.value = RemoteState.Success(
-                        PagingState(
+                        data = PagingState(
                             items = items,
                             isEndOfList = dataSource.isPageFull(items).not()
-                        )
+                        ),
                     )
-                } catch (exc: Exception) {
-                    Napier.e("Can't load first page", exc)
-                    _state.value = RemoteState.Error(exc)
+                } catch (e: Exception) {
+                    Napier.e("Can't load first page", e)
+                    _state.value = RemoteState.Error(e)
                 }
             }.apply {
                 invokeOnCompletion { loadFirstPageJob = null }
@@ -128,8 +121,8 @@ class Pagination<T>(
 
         if (currentState.data.isEndOfList) return
 
-        loadNextPageJob?.let {
-            it.join()
+        loadNextPageJob?.let { job ->
+            job.join()
             return
         }
         refreshJob?.join()
@@ -147,15 +140,15 @@ class Pagination<T>(
                     val newList: List<T> = currentList + filteredItems
 
                     _state.value = RemoteState.Success(
-                        PagingState(
+                        data = PagingState(
                             items = newList,
                             isEndOfList = dataSource.isPageFull(nextPageItems).not()
-                        )
+                        ),
                     )
 
                     nextPageItems
-                }.onFailure { exc ->
-                    Napier.e("Can't load next page", exc)
+                }.onFailure { e ->
+                    Napier.e("Can't load next page", e)
                     _state.value = currentState.withNextPageLoading(false)
                 }.let { result ->
                     nextPageListener(result)
@@ -185,7 +178,6 @@ class Pagination<T>(
             it.join()
             return
         }
-
         loadNextPageJob?.join()
 
         coroutineScope {
@@ -194,9 +186,9 @@ class Pagination<T>(
 
                 runCatching {
                     val currentItems: List<T> = currentState.data.items
-                    val newItems: List<T> = dataSource.loadPage(null)
-                    val filteredItems: List<T> = newItems.filterNot { currentItem ->
-                        currentItems.any { isSameItem(currentItem, it) }
+                    val newItems: List<T> = dataSource.loadPage(list = null)
+                    val filteredItems: List<T> = newItems.filterNot { item ->
+                        currentItems.any { isSameItem(item, it) }
                     }
 
                     val newState = if (filteredItems.size == newItems.size) {
@@ -207,8 +199,8 @@ class Pagination<T>(
                     _state.value = RemoteState.Success(newState)
 
                     newItems
-                }.onFailure { exc ->
-                    Napier.e("Can't refresh list of services", exc)
+                }.onFailure { e ->
+                    Napier.e("Can't refresh list of services", e)
                     _state.value = currentState.withRefreshing(false)
                 }.let { result ->
                     refreshListener(result)
@@ -227,9 +219,9 @@ class Pagination<T>(
      * ongoing loading operations to prevent conflicts with external data changes.
      */
     fun setData(items: List<T>?) {
-        loadFirstPageJob?.cancel()
-        refreshJob?.cancel()
-        loadNextPageJob?.cancel()
+        cancelLoadFirstPageJob()
+        cancelRefreshJob()
+        cancelLoadNextPageJob()
 
         _state.update { currentState ->
             when (currentState) {
@@ -242,6 +234,27 @@ class Pagination<T>(
                     data = PagingState(items = items.orEmpty())
                 )
             }
+        }
+    }
+
+    private fun cancelLoadFirstPageJob() {
+        loadFirstPageJob?.let { job ->
+            job.cancel()
+            loadFirstPageJob = null
+        }
+    }
+
+    private fun cancelRefreshJob() {
+        refreshJob?.let { job ->
+            job.cancel()
+            refreshJob = null
+        }
+    }
+
+    private fun cancelLoadNextPageJob() {
+        loadNextPageJob?.let { job ->
+            job.cancel()
+            loadNextPageJob = null
         }
     }
 }

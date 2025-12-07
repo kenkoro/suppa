@@ -60,6 +60,7 @@ class PaginationTests {
             response = expected.items,
             onLoading = { assertIs<RemoteState.Loading>(it) },
         )
+
         pagination.state.value.let { state ->
             assertIs<RemoteState.Success<*>>(state)
             assertEquals(expected, state.data)
@@ -80,11 +81,7 @@ class PaginationTests {
             isNextPageLoading = false,
             isEndOfList = false,
         )
-        pagination.executePagingAction(
-            action = { loadFirstPage() },
-            channel = channel,
-            response = expectedOnLoading.items,
-        )
+        pagination.loadInitialPages(channel, response = expectedOnLoading.items) { loadFirstPage() }
 
         pagination.executePagingAction(
             action = { loadNextPage() },
@@ -95,6 +92,7 @@ class PaginationTests {
                 assertEquals(expectedOnLoading, state.data)
             },
         )
+
         pagination.state.value.let { state ->
             assertIs<RemoteState.Success<*>>(state)
             assertEquals(expectedOnLoaded, state.data)
@@ -115,11 +113,7 @@ class PaginationTests {
             isNextPageLoading = false,
             isEndOfList = false,
         )
-        pagination.executePagingAction(
-            action = { loadFirstPage() },
-            channel = channel,
-            response = expectedOnLoading.items,
-        )
+        pagination.loadInitialPages(channel, response = expectedOnLoading.items) { loadFirstPage() }
 
         pagination.executePagingAction(
             action = { refresh() },
@@ -130,6 +124,7 @@ class PaginationTests {
                 assertEquals(expectedOnLoading, state.data)
             },
         )
+
         pagination.state.value.let { state ->
             assertIs<RemoteState.Success<*>>(state)
             assertEquals(expectedOnLoaded, state.data)
@@ -150,11 +145,7 @@ class PaginationTests {
             isNextPageLoading = false,
             isEndOfList = true,
         )
-        pagination.executePagingAction(
-            action = { loadFirstPage() },
-            channel = channel,
-            response = expectedOnLoading.items,
-        )
+        pagination.loadInitialPages(channel, response = expectedOnLoading.items) { loadFirstPage() }
 
         pagination.executePagingAction(
             action = { loadNextPage() },
@@ -165,6 +156,7 @@ class PaginationTests {
                 assertEquals(expectedOnLoading, state.data)
             },
         )
+
         pagination.state.value.let { state ->
             assertIs<RemoteState.Success<*>>(state)
             assertEquals(expectedOnLoaded, state.data)
@@ -185,11 +177,7 @@ class PaginationTests {
             isNextPageLoading = false,
             isEndOfList = false,
         )
-        pagination.executePagingAction(
-            action = { loadFirstPage() },
-            channel = channel,
-            response = emptyList(),
-        )
+        pagination.loadInitialPages(channel, response = emptyList()) { loadFirstPage() }
 
         pagination.executePagingAction(
             action = { refresh() },
@@ -200,6 +188,7 @@ class PaginationTests {
                 assertEquals(expectedOnLoading, state.data)
             },
         )
+
         pagination.state.value.let { state ->
             assertIs<RemoteState.Success<*>>(state)
             assertEquals(expectedOnLoaded, state.data)
@@ -208,17 +197,13 @@ class PaginationTests {
 
     @Test
     fun `should load the new first page when there's an action`() = runTest {
-        pagination.executePagingAction(
-            action = { loadFirstPage() },
-            channel = channel,
-            response = listOf(10),
-        )
         val expected = PagingState(
             items = listOf(8, 9),
             isRefreshing = false,
             isNextPageLoading = false,
             isEndOfList = false,
         )
+        pagination.loadInitialPages(channel, response = listOf(10)) { loadFirstPage() }
 
         pagination.executePagingAction(
             action = { loadFirstPage() },
@@ -228,9 +213,24 @@ class PaginationTests {
                 assertIs<RemoteState.Loading>(state)
             },
         )
+
         pagination.state.value.let { state ->
             assertIs<RemoteState.Success<*>>(state)
             assertEquals(expected, state.data)
+        }
+    }
+
+    private suspend fun <T> Pagination<T>.loadInitialPages(
+        channel: Channel<List<T>?>,
+        response: List<T>,
+        action: suspend Pagination<T>.() -> Unit,
+    ) {
+        val pagination = this
+        coroutineScope {
+            val result = async { pagination.action() }
+            channel.send(null)
+            channel.send(response)
+            result.await()
         }
     }
 
