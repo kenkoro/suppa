@@ -1,6 +1,34 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/788c9c58-b894-416d-869b-d008e1ab4a3a#gh-dark-mode-only" alt="suppa-dark-mode" />
+  <img src="https://github.com/user-attachments/assets/7aacf2d7-fa7b-4d3f-9033-1679040a2adf#gh-light-mode-only" alt="suppa-light-mode" />
+</p>
+
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase-dark.svg)](https://supabase.com)
 
-[A starter pack][original] to explore the Android SDK **made by [kenkoro][kenkoro]** :maple_leaf:.
+# Suppa
+
+[A starter pack][original] to explore the Android SDK without a tedious setup.
+
+- [x] Dagger Framework. [Docs](https://dagger.dev)
+- [x] Convention Plugins
+  - [x] App Conventions
+  - [x] Feature Conventions
+  - [x] Library Conventions
+- [x] Health Checks
+- [x] Supabase and Firebase
+- [x] Key/Value Storages
+  - [x] Encrypted/Non-encrypted Storages
+- [x] Local Data Persistence
+- [x] Pagination
+- [x] Internationalization
+
+## Documentation
+
+For full documentation, see the [docs](./docs) folder.
+
+## Authors
+
+Made by [kenkoro][kenkoro] with :heart:.
 
 [original]: https://github.com/kenkoro/suppa
 [kenkoro]: https://github.com/kenkoro
