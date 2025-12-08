@@ -24,7 +24,7 @@
 
 ## Documentation
 
-For full documentation, see the [docs](./docs) folder.
+For full documentation, see the [docs](./) folder.
 
 ## Authors
 
