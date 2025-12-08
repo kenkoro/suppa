@@ -1,10 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Starter" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Suppa" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
-    <style name="Theme.Starter" parent="Base.Theme.Starter" />
+    <style name="Theme.Suppa" parent="Base.Theme.Suppa" />
 </resources>

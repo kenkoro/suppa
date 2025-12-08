@@ -30,6 +30,8 @@ dependencies {
     implementation(libs.moko.network.errors)
     implementation(libs.sqldelight.androidDriver)
     implementation(libs.sqldelight.coroutinesExtensions)
+    api(libs.androidx.security.crypto)
+    implementation(libs.multiplatformSettings)
 }
 
 sqldelight {
