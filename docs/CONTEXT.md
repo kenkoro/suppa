@@ -79,3 +79,73 @@ Notice, there are only the `:utils` module and the convention plugin!
 
 **P.S.:** This approach is great if you're planning to switch to the KMP, because
 the Kotlin/Native framework doesn't currently support incremental builds.
+
+### Features guide
+
+To begin a new feature, you must first declare its module and add it to the
+lib's [`build.gradle.kts`](../lib/build.gradle.kts). Follow the standard directory
+structure to maintain consistency:
+
+```text
+.
+├── build.gradle.kts
+└── src
+    └── main
+        └── kotlin
+            └── dev
+                └── kenkoro
+                    └── lib
+                        └── feature
+                            └── sample
+                                ├── di
+                                │   ├── AssistedSampleViewModelFactory.kt
+                                │   └── FeatureSampleModule.kt
+                                ├── model
+                                │   └── SampleRepository.kt
+                                └── presentation
+                                    ├── AssistedSampleViewModel.kt
+                                    └── SampleViewModel.kt
+```
+
+Update the lib's [`build.gradle.kts`](../lib/build.gradle.kts) file to
+include the new feature module.
+
+```kotlin
+plugins {
+    alias(libs.plugins.dev.kenkoro.lib)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
+    alias(libs.plugins.sqldelight)
+}
+
+android.namespace = "dev.kenkoro.lib"
+
+val projectModules = listOf(
+    // Include your feature module here
+    projects.lib.feature.sample,
+    projects.lib.utils,
+)
+```
+
+For features utilizing no-params view-models that are provided via a module,
+integrate your feature's module into the
+[`FeatureModule.kt`](../lib/src/main/kotlin/dev/kenkoro/lib/di/modules/FeatureModule.kt).
+
+```kotlin
+@Module(
+    includes = [
+        // Include your feature module here
+        FeatureSampleModule::class,
+    ]
+)
+internal interface FeatureModule {
+    @Binds
+    fun bindViewModelFactory(implementation: ViewModelFactory): ViewModelProvider.Factory
+}
+```
+
+#### Activities and fragments
+
+You should create these components inheriting from the `ParamsActivity`,
+`NoParamsActivity`, `ParamsFragment`, or `NoParamsFragment`
+declared in the [app module](../app/src/main/java/dev/kenkoro/app/di).
+They provide a convenient way to get featured view-models.
