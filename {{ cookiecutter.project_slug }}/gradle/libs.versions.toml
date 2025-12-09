@@ -1,0 +1,147 @@
+[versions]
+material = "1.13.0"
+
+coreKtx = "1.17.0"
+espressoCore = "3.7.0"
+appcompat = "1.7.1"
+activity = "1.12.0"
+fragmentKtx = "1.8.9"
+constraintlayout = "2.2.1"
+navigation = "2.9.6"
+recyclerview = "1.4.0"
+splashscreen = "1.2.0"
+viewmodelKtx = "2.10.0"
+crypto = "1.1.0"
+
+retrofit = "3.0.0"
+
+coroutines = "1.10.2"
+serialization = "1.9.0"
+
+junit = "4.13.2"
+androidjunit = "1.3.0"
+
+detekt = "1.23.8"
+napier = "2.7.1"
+
+mokoResources = "0.25.1"
+mokoCrashReporting = "0.4.0"
+mokoErrors = "0.8.0"
+mokoNetwork = "0.21.2"
+mokoUnits = "0.8.0"
+
+dagger = "2.57.2"
+supabase = "3.2.6"
+firebaseBoM = "34.6.0"
+firebase = "3.0.6"
+googleServices = "4.4.4"
+
+agp = "8.13.1"
+kotlin = "2.2.21"
+ksp = "2.2.21-2.0.4"
+
+sqldelight = "2.2.1"
+multiplatformSettings = "1.3.0"
+
+[libraries]
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
+androidx-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "viewmodelKtx" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "crypto" }
+
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+jsonConverter = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
+
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+
+detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
+
+napier = { group = "io.github.aakira", name = "napier", version.ref = "napier" }
+
+moko-resources = { group = "dev.icerock.moko", name = "resources", version.ref = "mokoResources" }
+moko-crashReporting-core = { group = "dev.icerock.moko", name = "crash-reporting-core", version.ref = "mokoCrashReporting" }
+moko-crashReporting-crashlytics = { group = "dev.icerock.moko", name = "crash-reporting-crashlytics", version.ref = "mokoCrashReporting" }
+moko-crashReporting-napier = { group = "dev.icerock.moko", name = "crash-reporting-napier", version.ref = "mokoCrashReporting" }
+moko-errors = { group = "dev.icerock.moko", name = "errors", version.ref = "mokoErrors" }
+moko-network-errors = { group = "dev.icerock.moko", name = "network-errors", version.ref = "mokoNetwork" }
+moko-units = { group = "dev.icerock.moko", name = "units", version.ref = "mokoUnits" }
+moko-units-viewBinding = { group = "dev.icerock.moko", name = "units-viewbinding", version.ref = "mokoUnits" }
+
+dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
+dagger-android = { group = "com.google.dagger", name = "dagger-android", version.ref = "dagger" }
+dagger-android-support = { group = "com.google.dagger", name = "dagger-android-support", version.ref = "dagger" }
+dagger-android-processor = { group = "com.google.dagger", name = "dagger-android-processor", version.ref = "dagger" }
+
+supabase-bom = { group = "io.github.jan-tennert.supabase", name = "bom", version.ref = "supabase" }
+supabase-postgrest = { group = "io.github.jan-tennert.supabase", name = "postgrest-kt" }
+
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBoM" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+
+sqldelight-runtime = { group = "app.cash.sqldelight", name = "runtime", version.ref = "sqldelight" }
+sqldelight-androidDriver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqldelight" }
+sqldelight-coroutinesExtensions = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight" }
+
+multiplatformSettings = { group = "com.russhwolf", name = "multiplatform-settings", version.ref = "multiplatformSettings" }
+
+# Gradle plugins artifacts
+kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+androidGradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+detektGradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+moko-resourcesGradlePlugin = { group = "dev.icerock.moko", name = "resources-generator", version.ref = "mokoResources" }
+multiplatformGradlePlugin = { group = "org.jetbrains.kotlin.multiplatform", name = "org.jetbrains.kotlin.multiplatform.gradle.plugin", version.ref = "kotlin" }
+kspGradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+gitlab-arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+icerock-mobile-multiplatformResources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "mokoResources" }
+jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase" }
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+
+# Convention plugins
+{{ cookiecutter.__pkg_conv }}-android-app = { id = "app-convention" }
+{{ cookiecutter.__pkg_conv }}-lib = { id = "lib-convention" }
+{{ cookiecutter.__pkg_conv }}-multiplatform-lib = { id = "multiplatform-lib-convention" }
+{{ cookiecutter.__pkg_conv }}-feature = { id = "feature-convention" }
+
+[bundles]
+androidx = [
+    "androidx-core-ktx",
+    "androidx-appcompat",
+    "androidx-activity",
+    "androidx-constraintlayout",
+    "androidx-navigation-fragment-ktx",
+    "androidx-navigation-ui-ktx",
+    "androidx-recyclerview",
+    "androidx-splashscreen"
+]
+network = [
+    "retrofit",
+    "jsonConverter",
+    "kotlinx-serialization-json"
+]
+moko-crashReporting = [
+    "moko-crashReporting-core",
+    "moko-crashReporting-crashlytics",
+    "moko-crashReporting-napier"
+]

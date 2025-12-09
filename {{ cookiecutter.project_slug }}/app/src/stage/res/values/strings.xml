@@ -1,0 +1,3 @@
+<resources>
+    <string name="app_name">{{ cookiecutter.__cap_slug }} (S)</string>
+</resources>
