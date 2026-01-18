@@ -9,7 +9,7 @@ import dev.icerock.moko.errors.presenters.SelectorErrorPresenter
 import io.github.aakira.napier.Napier
 
 @Module
-internal object ExceptionHandlerModule {
+object ExceptionHandlerModule {
     @Provides
     fun provideAlertErrorPresenter(): AlertErrorPresenter = AlertErrorPresenter()
 

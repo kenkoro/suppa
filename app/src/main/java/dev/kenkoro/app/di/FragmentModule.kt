@@ -6,7 +6,7 @@ import dev.kenkoro.app.feature.sample.AssistedSampleFragment
 import dev.kenkoro.app.feature.sample.SampleFragment
 
 @Module
-internal interface FragmentModule {
+interface FragmentModule {
     @ContributesAndroidInjector
     fun contributeSampleFragmentAndroidInjector(): SampleFragment
 

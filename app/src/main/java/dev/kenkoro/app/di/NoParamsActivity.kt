@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import javax.inject.Inject
 
-internal open class NoParamsActivity : DaggerActivity() {
+open class NoParamsActivity : DaggerActivity() {
     @Inject
     lateinit var defaultFactory: ViewModelProvider.Factory
 

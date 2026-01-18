@@ -5,7 +5,7 @@ import dev.kenkoro.lib.utils.di.viewmodel.Factory
 import dev.kenkoro.lib.utils.di.viewmodel.getViewModel
 import javax.inject.Inject
 
-internal open class ParamsActivity<F : Factory<*, *>> : DaggerActivity() {
+open class ParamsActivity<F : Factory<*, *>> : DaggerActivity() {
     @Inject
     lateinit var assistedFactory: F
 

@@ -6,7 +6,7 @@ import dev.kenkoro.lib.utils.di.viewmodel.Factory
 import dev.kenkoro.lib.utils.di.viewmodel.getViewModel
 import javax.inject.Inject
 
-internal abstract class ParamsFragment<F : Factory<*, *>, VB : ViewBinding> : DaggerFragment<VB>() {
+abstract class ParamsFragment<F : Factory<*, *>, VB : ViewBinding> : DaggerFragment<VB>() {
     @Inject
     lateinit var assistedFactory: F
 

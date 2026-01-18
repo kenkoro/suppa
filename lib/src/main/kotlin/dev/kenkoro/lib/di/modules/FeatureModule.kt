@@ -11,7 +11,7 @@ import dev.kenkoro.lib.feature.sample.di.FeatureSampleModule
         FeatureSampleModule::class,
     ]
 )
-internal interface FeatureModule {
+interface FeatureModule {
     @Binds
     fun bindViewModelFactory(implementation: ViewModelFactory): ViewModelProvider.Factory
 }

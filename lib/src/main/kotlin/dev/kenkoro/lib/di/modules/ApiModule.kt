@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 
 @Module
-internal object ApiModule {
+object ApiModule {
     @Provides
     fun provideJson(): Json {
         return Json {

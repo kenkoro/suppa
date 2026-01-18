@@ -5,7 +5,7 @@ import dagger.android.ContributesAndroidInjector
 import dev.kenkoro.app.MainActivity
 
 @Module
-internal interface ActivityModule {
+interface ActivityModule {
     @ContributesAndroidInjector
     fun contributeMainActivityAndroidInjector(): MainActivity
 }

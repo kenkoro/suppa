@@ -9,7 +9,7 @@ import dev.kenkoro.app.di.ParamsFragment
 import dev.kenkoro.lib.feature.sample.di.AssistedSampleViewModelFactory
 import dev.kenkoro.lib.feature.sample.presentation.AssistedSampleViewModel
 
-internal class AssistedSampleFragment :
+class AssistedSampleFragment :
     ParamsFragment<AssistedSampleViewModelFactory, AssistedSampleFragmentBinding>() {
     private val viewModel: AssistedSampleViewModel by getViewModel {
         AssistedSampleViewModel.Params(name = "passed info")

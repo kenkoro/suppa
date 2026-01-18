@@ -7,7 +7,7 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.viewbinding.ViewBinding
 import javax.inject.Inject
 
-internal abstract class NoParamsFragment<VB : ViewBinding> : DaggerFragment<VB>() {
+abstract class NoParamsFragment<VB : ViewBinding> : DaggerFragment<VB>() {
     @Inject
     lateinit var defaultFactory: ViewModelProvider.Factory
 

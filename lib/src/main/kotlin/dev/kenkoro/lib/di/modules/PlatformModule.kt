@@ -15,7 +15,7 @@ import dev.kenkoro.lib.di.qualifiers.NonEncryptedPrefs
 import dev.kenkoro.lib.di.qualifiers.NonEncryptedSettings
 
 @Module
-internal object PlatformModule {
+object PlatformModule {
     @Provides
     fun provideMasterKey(@AppContext context: Context): MasterKey {
         @Suppress("DEPRECATION")

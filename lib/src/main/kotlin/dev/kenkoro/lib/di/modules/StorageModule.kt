@@ -6,7 +6,7 @@ import dev.kenkoro.lib.storage.EncryptedKeyValueStorage
 import dev.kenkoro.lib.storage.KeyValueStorage
 
 @Module
-internal interface StorageModule {
+interface StorageModule {
     // TODO: Bind a feature-specific app storage interface
 
     @Binds

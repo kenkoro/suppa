@@ -20,7 +20,7 @@ import javax.inject.Singleton
         LibModule::class,
     ]
 )
-internal interface AppComponent {
+interface AppComponent {
     @Component.Builder
     interface Builder {
         @BindsInstance

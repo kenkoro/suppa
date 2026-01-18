@@ -13,7 +13,7 @@ import dev.kenkoro.app.databinding.MainActivityBinding
 import dev.kenkoro.app.di.NoParamsActivity
 import dev.kenkoro.app.utils.requireNavHostFragment
 
-internal class MainActivity : NoParamsActivity() {
+class MainActivity : NoParamsActivity() {
     private lateinit var binding: MainActivityBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
 

@@ -6,7 +6,7 @@ import dev.kenkoro.lib.feature.sample.model.SampleRepository
 import dev.kenkoro.lib.repositories.AppRepository
 
 @Module
-internal interface RepositoryModule {
+interface RepositoryModule {
     @Binds
     fun bindSampleRepository(implementation: AppRepository): SampleRepository
 }
