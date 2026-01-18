@@ -1,3 +1,3 @@
 package {{ cookiecutter.pkg_name }}.lib.storage
 
-internal class AppStorage : BaseStorage
+class AppStorage : BaseStorage

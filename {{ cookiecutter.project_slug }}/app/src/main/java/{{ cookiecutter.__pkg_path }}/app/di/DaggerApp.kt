@@ -7,7 +7,7 @@ import dagger.android.HasAndroidInjector
 import {{ cookiecutter.pkg_name }}.app.BuildConfig
 import javax.inject.Inject
 
-internal open class DaggerApp : Application(), HasAndroidInjector {
+open class DaggerApp : Application(), HasAndroidInjector {
     @Inject
     lateinit var androidInjector: DispatchingAndroidInjector<Any>
 

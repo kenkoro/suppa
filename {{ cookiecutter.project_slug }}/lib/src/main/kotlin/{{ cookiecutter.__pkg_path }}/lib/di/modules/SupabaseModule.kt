@@ -10,7 +10,7 @@ import io.github.jan.supabase.postgrest.Postgrest
 import io.github.jan.supabase.postgrest.postgrest
 
 @Module
-internal object SupabaseModule {
+object SupabaseModule {
     @Provides
     fun provideSupabaseClient(
         @SupabaseUrl supabaseUrl: String,

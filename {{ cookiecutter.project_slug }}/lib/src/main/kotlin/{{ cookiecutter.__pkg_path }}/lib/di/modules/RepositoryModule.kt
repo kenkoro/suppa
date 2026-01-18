@@ -6,7 +6,7 @@ import {{ cookiecutter.pkg_name }}.lib.feature.sample.model.SampleRepository
 import {{ cookiecutter.pkg_name }}.lib.repositories.AppRepository
 
 @Module
-internal interface RepositoryModule {
+interface RepositoryModule {
     @Binds
     fun bindSampleRepository(implementation: AppRepository): SampleRepository
 }

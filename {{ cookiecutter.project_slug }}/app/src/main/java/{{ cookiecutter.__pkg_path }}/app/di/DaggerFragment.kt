@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import dagger.android.support.AndroidSupportInjection
 
-internal abstract class DaggerFragment<VB : ViewBinding> : Fragment() {
+abstract class DaggerFragment<VB : ViewBinding> : Fragment() {
     private var _binding: VB? = null
     protected val binding: VB
         get() = requireNotNull(_binding) { "Couldn't read the binding on creation" }

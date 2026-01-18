@@ -15,7 +15,7 @@ import {{ cookiecutter.pkg_name }}.lib.di.qualifiers.NonEncryptedPrefs
 import {{ cookiecutter.pkg_name }}.lib.di.qualifiers.NonEncryptedSettings
 
 @Module
-internal object PlatformModule {
+object PlatformModule {
     @Provides
     fun provideMasterKey(@AppContext context: Context): MasterKey {
         @Suppress("DEPRECATION")

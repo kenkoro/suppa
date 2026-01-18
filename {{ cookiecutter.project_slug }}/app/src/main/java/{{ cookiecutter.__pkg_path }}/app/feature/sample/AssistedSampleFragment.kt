@@ -9,7 +9,7 @@ import {{ cookiecutter.pkg_name }}.app.di.ParamsFragment
 import {{ cookiecutter.pkg_name }}.lib.feature.sample.di.AssistedSampleViewModelFactory
 import {{ cookiecutter.pkg_name }}.lib.feature.sample.presentation.AssistedSampleViewModel
 
-internal class AssistedSampleFragment :
+class AssistedSampleFragment :
     ParamsFragment<AssistedSampleViewModelFactory, AssistedSampleFragmentBinding>() {
     private val viewModel: AssistedSampleViewModel by getViewModel {
         AssistedSampleViewModel.Params(name = "passed info")

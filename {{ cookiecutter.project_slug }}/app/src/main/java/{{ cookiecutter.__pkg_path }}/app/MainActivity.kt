@@ -13,7 +13,7 @@ import {{ cookiecutter.pkg_name }}.app.databinding.MainActivityBinding
 import {{ cookiecutter.pkg_name }}.app.di.NoParamsActivity
 import {{ cookiecutter.pkg_name }}.app.utils.requireNavHostFragment
 
-internal class MainActivity : NoParamsActivity() {
+class MainActivity : NoParamsActivity() {
     private lateinit var binding: MainActivityBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
 

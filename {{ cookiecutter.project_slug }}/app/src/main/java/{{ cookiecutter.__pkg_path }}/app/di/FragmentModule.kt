@@ -6,7 +6,7 @@ import {{ cookiecutter.pkg_name }}.app.feature.sample.AssistedSampleFragment
 import {{ cookiecutter.pkg_name }}.app.feature.sample.SampleFragment
 
 @Module
-internal interface FragmentModule {
+interface FragmentModule {
     @ContributesAndroidInjector
     fun contributeSampleFragmentAndroidInjector(): SampleFragment
 

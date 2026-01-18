@@ -9,7 +9,7 @@ import {{ cookiecutter.pkg_name }}.lib.di.qualifiers.AppContext
 import {{ cookiecutter.pkg_name }}.lib.sample.SampleDatabase
 
 @Module
-internal object SqlDelightModule {
+object SqlDelightModule {
     @Provides
     fun provideSqlDriver(@AppContext context: Context): SqlDriver {
         return AndroidSqliteDriver(SampleDatabase.Schema, context, SAMPLE_DB_NAME)

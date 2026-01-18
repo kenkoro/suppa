@@ -6,7 +6,7 @@ import {{ cookiecutter.pkg_name }}.lib.storage.EncryptedKeyValueStorage
 import {{ cookiecutter.pkg_name }}.lib.storage.KeyValueStorage
 
 @Module
-internal interface StorageModule {
+interface StorageModule {
     // TODO: Bind a feature-specific app storage interface
 
     @Binds

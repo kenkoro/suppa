@@ -11,7 +11,7 @@ import {{ cookiecutter.pkg_name }}.app.utils.Destination
 import {{ cookiecutter.pkg_name }}.lib.feature.sample.presentation.SampleViewModel
 import {{ cookiecutter.pkg_name }}.utils.bindings.bind
 
-internal class SampleFragment : NoParamsFragment<SampleFragmentBinding>() {
+class SampleFragment : NoParamsFragment<SampleFragmentBinding>() {
     private val viewModel by getViewModel<SampleViewModel>()
 
     override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> SampleFragmentBinding
