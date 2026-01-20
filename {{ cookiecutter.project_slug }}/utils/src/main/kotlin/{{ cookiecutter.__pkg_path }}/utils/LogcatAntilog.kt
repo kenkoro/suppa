@@ -1,4 +1,4 @@
-package dev.kenkoro.utils
+package {{ cookiecutter.pkg_name }}.utils
 
 import android.util.Log
 import io.github.aakira.napier.Antilog

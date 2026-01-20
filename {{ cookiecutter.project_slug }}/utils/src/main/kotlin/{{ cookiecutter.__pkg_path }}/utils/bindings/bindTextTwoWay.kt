@@ -1,4 +1,4 @@
-package dev.kenkoro.utils.bindings
+package {{ cookiecutter.pkg_name }}.utils.bindings
 
 import android.text.Editable
 import android.text.TextWatcher

@@ -1,4 +1,4 @@
-package dev.kenkoro.utils.bindings
+package {{ cookiecutter.pkg_name }}.utils.bindings
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
