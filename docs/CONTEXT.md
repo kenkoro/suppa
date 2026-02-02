@@ -137,7 +137,7 @@ integrate your feature's module into the
         FeatureSampleModule::class,
     ]
 )
-internal interface FeatureModule {
+interface FeatureModule {
     @Binds
     fun bindViewModelFactory(implementation: ViewModelFactory): ViewModelProvider.Factory
 }

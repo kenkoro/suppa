@@ -1,3 +1,3 @@
 package dev.kenkoro.lib.storage
 
-internal class AppStorage : BaseStorage
+internal class AppStorage : FeatureStorage
