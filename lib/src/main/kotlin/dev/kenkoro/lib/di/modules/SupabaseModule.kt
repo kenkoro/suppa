@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dev.kenkoro.lib.di.qualifiers.SupabaseKey
 import dev.kenkoro.lib.di.qualifiers.SupabaseUrl
+import dev.kenkoro.lib.di.scopes.MainScope
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.postgrest.Postgrest
@@ -11,6 +12,7 @@ import io.github.jan.supabase.postgrest.postgrest
 
 @Module
 object SupabaseModule {
+    @MainScope
     @Provides
     fun provideSupabaseClient(
         @SupabaseUrl supabaseUrl: String,
@@ -21,6 +23,7 @@ object SupabaseModule {
         }
     }
 
+    @MainScope
     @Provides
     fun bindSupabaseDatabase(client: SupabaseClient): Postgrest = client.postgrest
 }

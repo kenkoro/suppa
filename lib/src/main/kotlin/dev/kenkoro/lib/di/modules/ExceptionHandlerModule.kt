@@ -6,13 +6,16 @@ import dev.icerock.moko.errors.handler.ExceptionHandler
 import dev.icerock.moko.errors.mappers.ExceptionMappersStorage
 import dev.icerock.moko.errors.presenters.AlertErrorPresenter
 import dev.icerock.moko.errors.presenters.SelectorErrorPresenter
+import dev.kenkoro.lib.di.scopes.MainScope
 import io.github.aakira.napier.Napier
 
 @Module
 object ExceptionHandlerModule {
+    @MainScope
     @Provides
     fun provideAlertErrorPresenter(): AlertErrorPresenter = AlertErrorPresenter()
 
+    @MainScope
     @Provides
     fun provideExceptionHandler(
         alertErrorPresenter: AlertErrorPresenter,

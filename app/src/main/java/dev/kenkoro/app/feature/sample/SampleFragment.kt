@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import dev.kenkoro.app.databinding.SampleFragmentBinding
 import dev.kenkoro.app.di.NoParamsFragment
+import dev.kenkoro.app.feature.sample.nav.SampleNavigable
 import dev.kenkoro.app.utils.Destination
 import dev.kenkoro.lib.feature.sample.presentation.SampleViewModel
 import dev.kenkoro.utils.bindings.bind
 
-class SampleFragment : NoParamsFragment<SampleFragmentBinding>() {
+class SampleFragment : NoParamsFragment<SampleFragmentBinding>(), SampleNavigable {
     private val viewModel by getViewModel<SampleViewModel>()
 
     override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> SampleFragmentBinding
@@ -42,7 +43,7 @@ class SampleFragment : NoParamsFragment<SampleFragmentBinding>() {
         }
     }
 
-    private fun navigateToAssistedSample() {
-        findNavController().navigate(Destination.AssistedSampleFragment.action())
+    override fun navigateToAssistedSample() {
+        findNavController().navigate(resId = Destination.AssistedSample.actionId)
     }
 }

@@ -9,9 +9,9 @@ import javax.inject.Inject
 
 open class DaggerApp : Application(), HasAndroidInjector {
     @Inject
-    lateinit var androidInjector: DispatchingAndroidInjector<Any>
+    lateinit var appInjector: DispatchingAndroidInjector<Any>
 
-    override fun androidInjector(): AndroidInjector<in Any> = androidInjector
+    override fun androidInjector(): AndroidInjector<in Any> = appInjector
 
     override fun onCreate() {
         super.onCreate()

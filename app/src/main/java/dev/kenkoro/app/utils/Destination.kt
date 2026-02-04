@@ -1,11 +1,13 @@
 package dev.kenkoro.app.utils
 
+import androidx.annotation.IdRes
 import dev.kenkoro.app.R
 
 internal sealed interface Destination {
-    fun action(): Int
+    @get:IdRes
+    val actionId: Int
 
-    data object AssistedSampleFragment : Destination {
-        override fun action(): Int = R.id.toAssistedSampleFragmentAction
+    data object AssistedSample : Destination {
+        override val actionId: Int = R.id.toAssistedSampleFragmentAction
     }
 }

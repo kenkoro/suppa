@@ -4,7 +4,6 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
-import dev.kenkoro.lib.di.modules.LibModule
 import dev.kenkoro.lib.di.qualifiers.AppContext
 import dev.kenkoro.lib.di.qualifiers.BaseUrl
 import dev.kenkoro.lib.di.qualifiers.SupabaseKey
@@ -15,9 +14,7 @@ import javax.inject.Singleton
 @Component(
     modules = [
         ActivityModule::class,
-        FragmentModule::class,
         AndroidInjectionModule::class,
-        LibModule::class,
     ]
 )
 interface AppComponent {
