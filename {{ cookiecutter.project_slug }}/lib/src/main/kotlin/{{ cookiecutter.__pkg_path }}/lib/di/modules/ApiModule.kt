@@ -3,6 +3,7 @@ package {{ cookiecutter.pkg_name }}.lib.di.modules
 import dagger.Module
 import dagger.Provides
 import {{ cookiecutter.pkg_name }}.lib.di.qualifiers.BaseUrl
+import {{ cookiecutter.pkg_name }}.lib.di.scopes.MainScope
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
@@ -11,6 +12,7 @@ import retrofit2.converter.kotlinx.serialization.asConverterFactory
 
 @Module
 object ApiModule {
+    @MainScope
     @Provides
     fun provideJson(): Json {
         return Json {
@@ -18,9 +20,11 @@ object ApiModule {
         }
     }
 
+    @MainScope
     @Provides
     fun provideMediaType(): MediaType = "application/json".toMediaType()
 
+    @MainScope
     @Provides
     fun provideRetrofit(
         @BaseUrl baseUrl: String,

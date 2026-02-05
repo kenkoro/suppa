@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import {{ cookiecutter.pkg_name }}.app.databinding.SampleFragmentBinding
 import {{ cookiecutter.pkg_name }}.app.di.NoParamsFragment
+import {{ cookiecutter.pkg_name }}.app.feature.sample.nav.SampleNavigable
 import {{ cookiecutter.pkg_name }}.app.utils.Destination
 import {{ cookiecutter.pkg_name }}.lib.feature.sample.presentation.SampleViewModel
 import {{ cookiecutter.pkg_name }}.utils.bindings.bind
 
-class SampleFragment : NoParamsFragment<SampleFragmentBinding>() {
+class SampleFragment : NoParamsFragment<SampleFragmentBinding>(), SampleNavigable {
     private val viewModel by getViewModel<SampleViewModel>()
 
     override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> SampleFragmentBinding
@@ -42,7 +43,7 @@ class SampleFragment : NoParamsFragment<SampleFragmentBinding>() {
         }
     }
 
-    private fun navigateToAssistedSample() {
-        findNavController().navigate(Destination.AssistedSampleFragment.action())
+    override fun navigateToAssistedSample() {
+        findNavController().navigate(resId = Destination.AssistedSample.actionId)
     }
 }

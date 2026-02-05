@@ -13,9 +13,11 @@ import {{ cookiecutter.pkg_name }}.lib.di.qualifiers.EncryptedPrefs
 import {{ cookiecutter.pkg_name }}.lib.di.qualifiers.EncryptedSettings
 import {{ cookiecutter.pkg_name }}.lib.di.qualifiers.NonEncryptedPrefs
 import {{ cookiecutter.pkg_name }}.lib.di.qualifiers.NonEncryptedSettings
+import {{ cookiecutter.pkg_name }}.lib.di.scopes.MainScope
 
 @Module
 object PlatformModule {
+    @MainScope
     @Provides
     fun provideMasterKey(@AppContext context: Context): MasterKey {
         @Suppress("DEPRECATION")
@@ -24,6 +26,7 @@ object PlatformModule {
             .build()
     }
 
+    @MainScope
     @Provides
     @EncryptedPrefs
     @Suppress("DEPRECATION")
@@ -40,6 +43,7 @@ object PlatformModule {
         )
     }
 
+    @MainScope
     @Provides
     @NonEncryptedPrefs
     fun provideNonEncryptedSharedPreferences(@AppContext context: Context): SharedPreferences {
@@ -49,12 +53,14 @@ object PlatformModule {
         )
     }
 
+    @MainScope
     @Provides
     @EncryptedSettings
     fun provideEncryptedSettings(@EncryptedPrefs sharedPreferences: SharedPreferences): Settings {
         return SharedPreferencesSettings(delegate = sharedPreferences)
     }
 
+    @MainScope
     @Provides
     @NonEncryptedSettings
     fun provideNonEncryptedSettings(
