@@ -1,6 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/788c9c58-b894-416d-869b-d008e1ab4a3a#gh-dark-mode-only" alt="suppa-dark-mode" />
-  <img src="https://github.com/user-attachments/assets/7aacf2d7-fa7b-4d3f-9033-1679040a2adf#gh-light-mode-only" alt="suppa-light-mode" />
+  <img src="https://github.com/user-attachments/assets/9c6b2da8-8f06-4748-9329-489c78bae478" alt="suppa-logo" />
 </p>
 
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase-dark.svg)](https://supabase.com)
