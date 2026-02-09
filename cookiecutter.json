@@ -2,7 +2,7 @@
   "project_slug": "suppa",
   "pkg_name": "dev.kenkoro",
   "__pkg_path": "{{ cookiecutter.pkg_name | replace('.', '/') }}",
-  "__cap_slug": "{{ cookiecutter.project_slug | capitalize }}",
+  "__cap_slug": "{{ cookiecutter.project_slug | replace('-', ' ') | title | replace(' ', '') }}",
   "__pkg_conv": "{{ cookiecutter.pkg_name | replace('.', '-') }}",
   "__prompts__": {
     "project_slug": "Project name",
