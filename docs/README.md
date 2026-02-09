@@ -6,7 +6,7 @@
 
 # Suppa
 
-[A starter pack][original] to explore the Android SDK without a tedious setup. 
+**A starter pack** to explore the Android SDK without a tedious setup. 
 
 You need only **one line** to start (read about the [cookiecutter][cookiecutter]).
 
@@ -14,17 +14,13 @@ You need only **one line** to start (read about the [cookiecutter][cookiecutter]
 cookiecutter -c feat/cookiecutter gh:kenkoro/suppa
 ```
 
-- [x] Dagger Framework. [Docs](https://dagger.dev)
-- [x] Convention Plugins
-  - [x] App Conventions
-  - [x] Feature Conventions
-  - [x] Library Conventions
-- [x] Health Checks
+- [x] Dagger DI framework, [docs](https://dagger.dev)
+- [x] Convention plugins, [docs](https://docs.gradle.org/current/userguide/implementing_gradle_plugins_convention.html)
+- [x] Health checks
 - [x] Supabase and Firebase
-- [x] Key/Value Storages
-  - [x] Encrypted/Non-encrypted Storages
-- [x] Local Data Persistence
-- [x] Pagination
+- [x] Key/Value storages
+- [x] SQLDelight, [docs](https://github.com/sqldelight/sqldelight)
+- [x] Pagination, [docs](../lib/utils/src/main/kotlin/dev/kenkoro/lib/utils/paging)
 - [x] Internationalization
 
 ## Supabase and Firebase
@@ -40,7 +36,6 @@ For full documentation, see the [docs](./) folder.
 
 Made by [kenkoro][kenkoro] with :heart:.
 
-[original]: https://github.com/kenkoro/suppa
 [kenkoro]: https://github.com/kenkoro
 [cookiecutter]: https://github.com/cookiecutter/cookiecutter
 [supabase]: https://github.com/supabase/supabase
