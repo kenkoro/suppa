@@ -6,5 +6,5 @@
    See https://developer.android.com/about/versions/12/backup-restore
 -->
 <full-backup-content>
-    <exclude domain="dev.kenkoro.lib.di.modules_preferences" />
+    <exclude domain="dev.kenkoro.feature.di.modules_preferences" />
 </full-backup-content>

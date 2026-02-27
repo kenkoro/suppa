@@ -4,7 +4,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import dev.icerock.moko.crashreporting.crashlytics.CrashlyticsLogger
 import dev.icerock.moko.crashreporting.napier.CrashReportingAntilog
 import dev.kenkoro.app.di.DaggerApp
-import dev.kenkoro.lib.di.configureExceptionMappers
+import dev.kenkoro.feature.di.configureExceptionMappers
 import dev.kenkoro.utils.LogcatAntilog
 import io.github.aakira.napier.Napier
 

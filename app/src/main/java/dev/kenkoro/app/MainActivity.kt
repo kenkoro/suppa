@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import dev.kenkoro.app.databinding.MainActivityBinding
 import dev.kenkoro.app.di.NoParamsActivity
 import dev.kenkoro.app.utils.requireNavHostFragment
+import dev.kenkoro.feature.sample.R as SampleR
 
 class MainActivity : NoParamsActivity() {
     private lateinit var binding: MainActivityBinding
@@ -45,7 +46,7 @@ class MainActivity : NoParamsActivity() {
         appBarConfiguration =
             AppBarConfiguration(
                 setOf(
-                    R.id.sampleFragment,
+                    SampleR.id.sampleFragment,
                 ),
             )
         setupActionBarWithNavController(navController, appBarConfiguration)

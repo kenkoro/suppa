@@ -25,5 +25,5 @@ internal fun VersionCatalog.safeLibrary(alias: String): Provider<MinimalExternal
  */
 internal fun Project.getFeatureNamespace(): String {
     val packageName: String = name.replace("-", ".")
-    return "dev.kenkoro.lib.feature.$packageName"
+    return "dev.kenkoro.feature.$packageName"
 }

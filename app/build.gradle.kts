@@ -25,7 +25,7 @@ dependencies {
     implementation(libs.firebase.crashlytics)
     implementation(libs.moko.units.viewBinding)
 
-    implementation(projects.lib)
+    implementation(projects.feature)
     implementation(projects.utils)
     implementation(projects.uikit)
 

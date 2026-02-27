@@ -1,8 +1,8 @@
 package dev.kenkoro.app.di
 
 import androidx.lifecycle.ViewModel
-import dev.kenkoro.lib.utils.di.viewmodel.Factory
-import dev.kenkoro.lib.utils.di.viewmodel.getViewModel
+import dev.kenkoro.feature.utils.di.viewmodel.Factory
+import dev.kenkoro.feature.utils.di.viewmodel.getViewModel
 import javax.inject.Inject
 
 open class ParamsActivity<F : Factory<*, *>> : DaggerActivity() {
