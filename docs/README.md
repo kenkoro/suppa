@@ -20,7 +20,7 @@ cookiecutter -c feat/cookiecutter gh:kenkoro/suppa
 - [x] Supabase and Firebase
 - [x] Key/Value storages
 - [x] SQLDelight, [docs](https://github.com/sqldelight/sqldelight)
-- [x] Pagination, [docs](../lib/utils/src/main/kotlin/dev/kenkoro/lib/utils/paging)
+- [x] Pagination, [docs](../feature/utils/src/main/kotlin/dev/kenkoro/feature/utils/paging)
 - [x] Internationalization
 
 ## Supabase and Firebase
