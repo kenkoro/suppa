@@ -26,7 +26,8 @@ dependencies {
     implementation(libs.moko.units.viewBinding)
 
     implementation(projects.feature)
-    implementation(projects.utils)
+    implementation(projects.data)
+    implementation(projects.core)
     implementation(projects.uikit)
 
     ksp(libs.dagger.compiler)

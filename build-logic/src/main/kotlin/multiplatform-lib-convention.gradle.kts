@@ -16,7 +16,7 @@ kotlin {
 }
 
 dependencies {
-    commonMainApi(libs.safeLibrary("moko-resources"))
+    commonMainApi(libs.getLibrary("moko-resources"))
 }
 
 tasks.withType<KotlinCompile>() {

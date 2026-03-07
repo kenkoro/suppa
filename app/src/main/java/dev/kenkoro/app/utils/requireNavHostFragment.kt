@@ -2,7 +2,7 @@ package dev.kenkoro.app.utils
 
 import androidx.navigation.fragment.NavHostFragment
 import dev.kenkoro.app.R
-import dev.kenkoro.app.di.DaggerActivity
+import dev.kenkoro.app.di.component.DaggerActivity
 
 internal fun DaggerActivity.requireNavHostFragment(): NavHostFragment {
     val navHostFragment =

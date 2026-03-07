@@ -7,13 +7,13 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.safeLibrary("kotlinx-coroutines-core"))
-    implementation(libs.safeLibrary("napier"))
-    implementation(libs.safeLibrary("androidx-viewmodel-ktx"))
-    implementation(libs.safeLibrary("androidx-activity"))
-    implementation(libs.safeLibrary("androidx-appcompat"))
-    implementation(libs.safeLibrary("androidx-fragment-ktx"))
+    implementation(libs.getLibrary("kotlinx-coroutines-core"))
+    implementation(libs.getLibrary("napier"))
+    implementation(libs.getLibrary("androidx-viewmodel-ktx"))
+    implementation(libs.getLibrary("androidx-activity"))
+    implementation(libs.getLibrary("androidx-appcompat"))
+    implementation(libs.getLibrary("androidx-fragment-ktx"))
 
-    testImplementation(libs.safeLibrary("kotlin-test"))
-    testImplementation(libs.safeLibrary("kotlinx-coroutines-test"))
+    testImplementation(libs.getLibrary("kotlin-test"))
+    testImplementation(libs.getLibrary("kotlinx-coroutines-test"))
 }

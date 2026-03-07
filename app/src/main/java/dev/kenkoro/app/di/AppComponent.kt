@@ -4,16 +4,19 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
-import dev.kenkoro.feature.di.qualifiers.AppContext
-import dev.kenkoro.feature.di.qualifiers.BaseUrl
-import dev.kenkoro.feature.di.qualifiers.SupabaseKey
-import dev.kenkoro.feature.di.qualifiers.SupabaseUrl
-import javax.inject.Singleton
+import dev.kenkoro.app.di.component.DaggerApp
+import dev.kenkoro.data.di.AppScope
+import dev.kenkoro.data.di.module.DataModule
+import dev.kenkoro.data.di.qualifier.AppContext
+import dev.kenkoro.data.di.qualifier.BaseUrl
+import dev.kenkoro.data.di.qualifier.SupabaseKey
+import dev.kenkoro.data.di.qualifier.SupabaseUrl
 
-@Singleton
+@AppScope
 @Component(
     modules = [
-        ActivityModule::class,
+        HostModule::class,
+        DataModule::class,
         AndroidInjectionModule::class,
     ]
 )

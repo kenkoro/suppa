@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
+import dev.kenkoro.core.binding.bind
 import dev.kenkoro.feature.sample.databinding.SampleFragmentBinding
 import dev.kenkoro.feature.sample.nav.SampleNavigable
-import dev.kenkoro.feature.utils.di.components.NoParamsFragment
-import dev.kenkoro.utils.bindings.bind
+import dev.kenkoro.feature.utils.di.component.NoParamsFragment
 
 class SampleFragment : NoParamsFragment<SampleFragmentBinding>(), SampleNavigable {
     private val viewModel by getViewModel<SampleViewModel>()

@@ -12,8 +12,6 @@ android {
 dependencies {
     implementation(libs.moko.resources)
 
-    api(projects.utils)
-
     implementation(libs.dagger)
     implementation(libs.dagger.android)
     implementation(libs.dagger.android.support)

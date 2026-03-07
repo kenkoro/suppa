@@ -26,5 +26,5 @@ tasks.withType<Detekt>().configureEach {
 }
 
 dependencies {
-    detektPlugins(libs.safeLibrary("detekt-formatting"))
+    detektPlugins(libs.getLibrary("detekt-formatting"))
 }

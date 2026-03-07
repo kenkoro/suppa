@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import dev.kenkoro.app.databinding.MainActivityBinding
-import dev.kenkoro.app.di.NoParamsActivity
+import dev.kenkoro.app.di.component.NoParamsActivity
 import dev.kenkoro.app.utils.requireNavHostFragment
 import dev.kenkoro.feature.sample.R as SampleR
 
@@ -19,8 +19,15 @@ class MainActivity : NoParamsActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val isLaunch = savedInstanceState == null
         super.onCreate(savedInstanceState)
-        installSplashScreen()
+        // AOSP ID 2373: https://issuetracker.google.com/issues/36907463
+        if (isTaskRoot.not()) {
+            finish()
+            return
+        }
+
+        if (isLaunch) installSplashScreen()
         enableEdgeToEdge()
 
         binding = MainActivityBinding.inflate(layoutInflater)

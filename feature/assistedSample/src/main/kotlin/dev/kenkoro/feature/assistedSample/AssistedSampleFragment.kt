@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import dev.kenkoro.feature.assistedSample.databinding.AssistedSampleFragmentBinding
 import dev.kenkoro.feature.assistedSample.di.AssistedSampleViewModelFactory
-import dev.kenkoro.feature.utils.di.components.ParamsFragment
+import dev.kenkoro.feature.utils.di.component.ParamsFragment
 
 class AssistedSampleFragment :
     ParamsFragment<AssistedSampleViewModelFactory, AssistedSampleFragmentBinding>() {

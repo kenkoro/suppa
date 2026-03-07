@@ -107,5 +107,5 @@ android {
 }
 
 dependencies {
-    implementation(libs.safeLibrary("napier"))
+    implementation(libs.getLibrary("napier"))
 }
