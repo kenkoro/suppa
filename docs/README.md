@@ -11,14 +11,14 @@
 You need only **one line** to start (read about the [cookiecutter][cookiecutter]).
 
 ```text
-cookiecutter -c feat/cookiecutter gh:kenkoro/suppa
+cookiecutter -c release/latest gh:kenkoro/suppa
 ```
 
 - [x] Dagger DI framework, [docs](https://dagger.dev)
 - [x] Convention plugins, [docs](https://docs.gradle.org/current/userguide/implementing_gradle_plugins_convention.html)
 - [x] Health checks
 - [x] Supabase and Firebase
-- [x] Key/Value storages
+- [x] Key-Value storages
 - [x] SQLDelight, [docs](https://github.com/sqldelight/sqldelight)
 - [x] Pagination, [docs](../feature/utils/src/main/kotlin/dev/kenkoro/feature/utils/paging)
 - [x] Internationalization
