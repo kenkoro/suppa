@@ -11,6 +11,7 @@ import {{ cookiecutter.pkg_name }}.core.binding.bind
 import {{ cookiecutter.pkg_name }}.feature.sample.databinding.SampleFragmentBinding
 import {{ cookiecutter.pkg_name }}.feature.sample.nav.SampleNavigable
 import {{ cookiecutter.pkg_name }}.feature.utils.di.component.NoParamsFragment
+import {{ cookiecutter.pkg_name }}.feature.utils.nav.DeepLinkRegistry
 
 class SampleFragment : NoParamsFragment<SampleFragmentBinding>(), SampleNavigable {
     private val viewModel by getViewModel<SampleViewModel>()
@@ -45,8 +46,10 @@ class SampleFragment : NoParamsFragment<SampleFragmentBinding>(), SampleNavigabl
 
     override fun navigateToAssistedSample() {
         val assistedSample = NavDeepLinkRequest.Builder
-            .fromUri("suppa://{{ cookiecutter.pkg_name }}/assisted-sample".toUri())
+            .fromUri(DeepLinkRegistry.Request(assistedSampleKey).uri)
             .build()
         findNavController().navigate(assistedSample)
     }
+
+    override val assistedSampleKey = "assisted-sample"
 }
